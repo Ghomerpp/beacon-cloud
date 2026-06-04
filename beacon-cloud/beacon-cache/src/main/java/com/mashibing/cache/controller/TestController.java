@@ -18,7 +18,7 @@ public class TestController {
     private RedisClient redisClient;
 
     // 写测试   hash结构
-    @PostMapping("/cache/hmset/{key}")
+    @PostMapping("/test/set/{key}")
     public String set(@PathVariable String key,@RequestBody Map map){
         redisClient.hSet(key, map);
         return "ok";

@@ -10,7 +10,7 @@
               <option name="sessionId" value="dc137b55-29e6-4a20-9f7a-f4b28a574a38" />
               <option name="cwd" value="$PROJECT_DIR$" />
               <option name="model" value="claude-sonnet-4-6[1m]" />
-              <option name="permissionMode" value="acceptEdits" />
+              <option name="permissionMode" value="plan" />
               <option name="reasoningEffort" value="medium" />
             </TabSessionState>
           </value>

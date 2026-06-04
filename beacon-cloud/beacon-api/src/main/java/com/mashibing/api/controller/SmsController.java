@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 /*
 请求路径：** https://sms.beaconcloud.com/v1/sms/single_send
@@ -38,14 +40,15 @@ public class SmsController {
     @PostMapping(value = "/single_send",produces = "application/json;charset=utf-8")
     //@RequestBody 将请求体自动反序列化为 SingleSendForm 对象
     //@Validated 触发表单验证
-    public ResultVO singleSend(@RequestBody @Validated SingleSendForm singleSendForm, BindingResult bindingResult){
+    public ResultVO singleSend(@RequestBody @Validated SingleSendForm singleSendForm, BindingResult bindingResult,HttpServletRequest req){
+        //1. 校验参数
         if(bindingResult.hasErrors()){
             String msg = bindingResult.getFieldError().getDefaultMessage();
             log.info("【接口模块-单挑短信Controller】参数不合法 msg = {}",msg);
             return R.error(SmsCodeEnum.PARAMETER_ERROR.getCode(),msg);
         }
         //========================构建StandarSubmit,各种封装校验==========================
-
+        System.out.println(req.getRemoteAddr());
 
         //========================发送到MQ,交给策略模块处理==========================
 

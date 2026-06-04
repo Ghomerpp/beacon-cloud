@@ -45,7 +45,6 @@
         <dependency>
             <groupId>com.msb.cloud</groupId>
             <artifactId>horse-framework-starter-redis</artifactId>
-            <version>${horse.version}</version>
         </dependency>
     </dependencies>
 
