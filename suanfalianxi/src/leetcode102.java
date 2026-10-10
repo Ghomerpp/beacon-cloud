@@ -22,6 +22,7 @@ public class leetcode102 {
         }
     }
 
+    //第一个方法
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
 

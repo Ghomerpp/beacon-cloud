@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 父工程：StudySpringAI，位于上一级目录 SpringAITest/pom.xml。
+         spring-ai-bom 与快照仓库已在顶层父工程 spring-ai-parent 中统一声明，这里无需重复 -->
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>StudySpringAI</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>SpringAIEmbedding</artifactId>
+    <packaging>jar</packaging>
+
+    <name>SpringAIEmbedding</name>
+    <description>Embedding 模块：Spring AI + 智谱 AI 文本向量化</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 智谱 AI 模型 starter：同时提供 Chat 与 Embedding 能力，需引入后才能自动装配 EmbeddingModel -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-zhipuai</artifactId>
+        </dependency>
+
+        <!-- spring-ai-client-chat 提供 TokenTextSplitter、Document 等文档切分工具 -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-client-chat</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

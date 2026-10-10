@@ -15,4 +15,3 @@ spring:
         server-addr: 192.168.230.100:8848
         file-extension: yml
         # beacon-cache-dev.yml
-
